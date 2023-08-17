@@ -26,6 +26,9 @@
 		5E4204B52A8E374F006C60E7 /* MainViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4204B42A8E374F006C60E7 /* MainViewModelProtocol.swift */; };
 		5E4204B92A8E4771006C60E7 /* PersonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4204B82A8E4771006C60E7 /* PersonCell.swift */; };
 		5E4204BB2A8E50ED006C60E7 /* Extension + UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4204BA2A8E50ED006C60E7 /* Extension + UIColor.swift */; };
+		5EB6BA982A8EA26F00645F45 /* InfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB6BA972A8EA26F00645F45 /* InfoCell.swift */; };
+		5EB6BA9A2A8EA32A00645F45 /* Extension + UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB6BA992A8EA32A00645F45 /* Extension + UIView.swift */; };
+		5EB6BA9C2A8EA9B500645F45 /* Extension + UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB6BA9B2A8EA9B500645F45 /* Extension + UIFont.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +53,9 @@
 		5E4204B42A8E374F006C60E7 /* MainViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModelProtocol.swift; sourceTree = "<group>"; };
 		5E4204B82A8E4771006C60E7 /* PersonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCell.swift; sourceTree = "<group>"; };
 		5E4204BA2A8E50ED006C60E7 /* Extension + UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UIColor.swift"; sourceTree = "<group>"; };
+		5EB6BA972A8EA26F00645F45 /* InfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCell.swift; sourceTree = "<group>"; };
+		5EB6BA992A8EA32A00645F45 /* Extension + UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UIView.swift"; sourceTree = "<group>"; };
+		5EB6BA9B2A8EA9B500645F45 /* Extension + UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UIFont.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +114,8 @@
 			isa = PBXGroup;
 			children = (
 				5E4204BA2A8E50ED006C60E7 /* Extension + UIColor.swift */,
+				5EB6BA992A8EA32A00645F45 /* Extension + UIView.swift */,
+				5EB6BA9B2A8EA9B500645F45 /* Extension + UIFont.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -137,6 +145,8 @@
 			children = (
 				5E4204992A8DF6F3006C60E7 /* CharacterInfoView.swift */,
 				5E42049B2A8DF715006C60E7 /* CharacterInfoViewModel.swift */,
+				5EB6BA962A8EA25500645F45 /* Headers */,
+				5EB6BA952A8EA24900645F45 /* Cells */,
 			);
 			path = CharacterInfoScreen;
 			sourceTree = "<group>";
@@ -168,6 +178,21 @@
 				5E4204B82A8E4771006C60E7 /* PersonCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		5EB6BA952A8EA24900645F45 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				5EB6BA972A8EA26F00645F45 /* InfoCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		5EB6BA962A8EA25500645F45 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Headers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -245,9 +270,12 @@
 				5E4204B92A8E4771006C60E7 /* PersonCell.swift in Sources */,
 				5E42047D2A8DF557006C60E7 /* AppDelegate.swift in Sources */,
 				5E4204AF2A8E0110006C60E7 /* NetworkService.swift in Sources */,
+				5EB6BA982A8EA26F00645F45 /* InfoCell.swift in Sources */,
 				5E4204B32A8E1EFB006C60E7 /* ResultCharacter.swift in Sources */,
 				5E42049A2A8DF6F3006C60E7 /* CharacterInfoView.swift in Sources */,
+				5EB6BA9C2A8EA9B500645F45 /* Extension + UIFont.swift in Sources */,
 				5E4204B52A8E374F006C60E7 /* MainViewModelProtocol.swift in Sources */,
+				5EB6BA9A2A8EA32A00645F45 /* Extension + UIView.swift in Sources */,
 				5E42049C2A8DF715006C60E7 /* CharacterInfoViewModel.swift in Sources */,
 				5E4204AC2A8E00FA006C60E7 /* NetworkManager.swift in Sources */,
 				5E4204972A8DF6BD006C60E7 /* MainViewModel.swift in Sources */,

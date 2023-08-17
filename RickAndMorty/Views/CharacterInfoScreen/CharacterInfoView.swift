@@ -14,7 +14,9 @@ class CharacterInfoView: UIViewController {
         let tableView = UITableView()
         tableView.frame = self.view.frame
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.register(InfoCell.self, forCellReuseIdentifier: InfoCell.reuseID)
         tableView.dataSource = self
+        tableView.delegate = self
         return tableView
     }()
 
@@ -59,9 +61,9 @@ extension CharacterInfoView: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.section {
-        case 0:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-            cell.backgroundColor = .red
+        case 1:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: InfoCell.reuseID, for: indexPath) as? InfoCell else { return UITableViewCell()}
+            cell.configureCell(with: viewModel.selectedCharacter)
             return cell
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
@@ -70,4 +72,15 @@ extension CharacterInfoView: UITableViewDataSource {
         }
     }
     
+}
+
+extension CharacterInfoView: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        switch indexPath.section {
+        case 1:
+            return 130
+        default:
+            return 30
+        }
+    }
 }
