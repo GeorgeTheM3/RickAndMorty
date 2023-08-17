@@ -8,13 +8,11 @@
 import Foundation
 
 class NetwrokService: NetwrokServiceProtocol {
-    private let networkManager =  NetworkManager()
-
-    func downloadData() -> [Character] {
-        return []
-    }
+    @Published var characters: [Character] = []
     
-    func downloadDataFor(_ url: String) -> [Character] {
-        return []
+    private let networkManager =  NetworkManager()
+    
+    func fetchCharacterData(page: Int = 1) {
+        networkManager.fetchCharacterData(page: page)
     }
 }

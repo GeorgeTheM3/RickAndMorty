@@ -22,6 +22,7 @@
 		5E4204AC2A8E00FA006C60E7 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4204AB2A8E00FA006C60E7 /* NetworkManager.swift */; };
 		5E4204AF2A8E0110006C60E7 /* NetwrokService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4204AE2A8E0110006C60E7 /* NetwrokService.swift */; };
 		5E4204B12A8E012B006C60E7 /* NetwrokServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4204B02A8E012B006C60E7 /* NetwrokServiceProtocol.swift */; };
+		5E4204B32A8E1EFB006C60E7 /* ResultCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4204B22A8E1EFB006C60E7 /* ResultCharacter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		5E4204AB2A8E00FA006C60E7 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		5E4204AE2A8E0110006C60E7 /* NetwrokService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetwrokService.swift; sourceTree = "<group>"; };
 		5E4204B02A8E012B006C60E7 /* NetwrokServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetwrokServiceProtocol.swift; sourceTree = "<group>"; };
+		5E4204B22A8E1EFB006C60E7 /* ResultCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCharacter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 		5E4204902A8DF663006C60E7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5E4204B22A8E1EFB006C60E7 /* ResultCharacter.swift */,
 				5E4204A32A8DFF54006C60E7 /* StorageService */,
 				5E42049E2A8DF802006C60E7 /* NetworkService */,
 			);
@@ -224,6 +227,7 @@
 				5E4204B12A8E012B006C60E7 /* NetwrokServiceProtocol.swift in Sources */,
 				5E42047D2A8DF557006C60E7 /* AppDelegate.swift in Sources */,
 				5E4204AF2A8E0110006C60E7 /* NetwrokService.swift in Sources */,
+				5E4204B32A8E1EFB006C60E7 /* ResultCharacter.swift in Sources */,
 				5E42049A2A8DF6F3006C60E7 /* CharacterInfoView.swift in Sources */,
 				5E42049C2A8DF715006C60E7 /* CharacterInfoViewModel.swift in Sources */,
 				5E4204AC2A8E00FA006C60E7 /* NetworkManager.swift in Sources */,

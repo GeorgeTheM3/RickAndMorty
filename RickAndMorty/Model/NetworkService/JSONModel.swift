@@ -25,7 +25,7 @@ struct Result: Decodable {
     let gender: String
     let type: String
     let origin: Origin
-    let episode: [EpisodeData]
+    let episode: [String]
 }
 
 struct Origin: Decodable {

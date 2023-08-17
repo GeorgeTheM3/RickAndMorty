@@ -8,6 +8,5 @@
 import Foundation
 
 protocol NetwrokServiceProtocol {
-    func downloadData() -> [Character]
-    func downloadDataFor(_ url: String) -> [Character]
+    func fetchCharacterData(page: Int)
 }
