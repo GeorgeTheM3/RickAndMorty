@@ -7,6 +7,7 @@
 
 import Foundation
 
-protocol NetwrokServiceProtocol {
+protocol NetworkServiceProtocol {
+    var characters: [ResultCharacter] { get set }
     func fetchCharacterData(page: Int)
 }

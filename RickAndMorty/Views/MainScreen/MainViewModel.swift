@@ -6,3 +6,32 @@
 //
 
 import Foundation
+import Combine
+
+class MainViewModel: MainViewModelProtocol {
+    @Published var charactersList: [ResultCharacter] = []
+    
+    private var cancellable = Set<AnyCancellable>()
+    
+    private let networkService = NetworkService()
+
+    init() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
+            self.networkService.fetchCharacterData(page: 2)
+        })
+        networkService.fetchCharacterData()
+        bindings()
+    }
+    
+    func bindings() {
+       networkService.$characters
+            .receive(on: RunLoop.main)
+            .map { element -> [ResultCharacter] in
+                return element
+            }
+            .sink { download in
+                self.charactersList = download
+            }
+            .store(in: &cancellable)
+    }
+}

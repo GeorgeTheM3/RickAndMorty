@@ -15,7 +15,7 @@ enum TypeURL {
 }
 
 final class NetworkManager {
-    var characters: [ResultCharacter] = []
+    @Published var characters: [ResultCharacter] = []
     
     var cancellable = Set<AnyCancellable>()
     
@@ -64,7 +64,7 @@ final class NetworkManager {
             .sink(receiveCompletion: { status in
                 switch status {
                 case .finished:
-                    print("Completed")
+                    print("Completed download image \(character.id)")
                     break
                 case .failure(let error):
                     print("Receiver error \(error)")
@@ -74,7 +74,6 @@ final class NetworkManager {
                 guard let image = UIImage(data: data) else { return }
                 let person = ResultCharacter(id: character.id, image: image, imageURL: character.image, name: character.name, species: character.species, gender: character.gender, type: character.type, origin: character.origin, episode: character.episode)
                 self.characters.append(person)
-                print(self.characters.count)
             })
             .store(in: &cancellable)
     }
