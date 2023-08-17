@@ -23,6 +23,10 @@ class MainViewModel: MainViewModelProtocol {
         bindings()
     }
     
+    func selectCharacter(_ char: ResultCharacter) {
+        StorageService.shared.selectCharecter(char)
+    }
+    
     func bindings() {
        networkService.$characters
             .receive(on: RunLoop.main)

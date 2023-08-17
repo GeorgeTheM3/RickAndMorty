@@ -8,5 +8,6 @@
 import Foundation
 
 class LocalStorage {
-    var charectersStorage: [Character] = []
+    var charectersStorage: [ResultCharacter] = []
+    var selectedCharacter = ResultCharacter(id: 0, imageURL: "", name: "", species: "", gender: "", type: "", origin: Origin(name: ""), episode: [])
 }

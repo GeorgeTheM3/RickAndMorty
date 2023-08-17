@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+class CharacterInfoViewModel {
+    let selectedCharacter: ResultCharacter
+    
+    init() {
+        selectedCharacter = StorageService.shared.getSelectedCharacter()
+    }
+}

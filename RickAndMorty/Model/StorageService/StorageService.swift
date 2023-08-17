@@ -8,13 +8,15 @@
 import Foundation
 
 class StorageService: StorageServiceProtocol {
+    static let shared = StorageService()
+    
     private var localStorage = LocalStorage()
     
-    func saveCharacter(_ character: Character) {
-        localStorage.charectersStorage.append(character)
+    func selectCharecter(_ char: ResultCharacter) {
+        localStorage.selectedCharacter = char
     }
     
-    func getCharacters() -> [Character] {
-        return localStorage.charectersStorage
+    func getSelectedCharacter() -> ResultCharacter {
+        return localStorage.selectedCharacter
     }
 }

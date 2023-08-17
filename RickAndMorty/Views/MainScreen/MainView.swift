@@ -18,6 +18,7 @@ class MainView: UIViewController {
         let collectionView = UICollectionView(frame: frame, collectionViewLayout: setCompositionLayout())
         collectionView.register(PersonCell.self, forCellWithReuseIdentifier: PersonCell.reuseID)
         collectionView.dataSource = self
+        collectionView.delegate = self
         return collectionView
     }()
     
@@ -60,8 +61,8 @@ class MainView: UIViewController {
     }
 }
 
+//MARK: UICollectionViewDataSource
 extension MainView: UICollectionViewDataSource {
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.charactersList.count
     }
@@ -77,6 +78,15 @@ extension MainView: UICollectionViewDataSource {
     }
 }
 
+extension MainView: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        viewModel.selectCharacter(viewModel.charactersList[indexPath.row])
+        let controller = CharacterInfoView()
+        navigationController?.pushViewController(controller, animated: true)
+    }
+}
+
+//MARK: SetCompositionLayout
 extension MainView {
     private func setCompositionLayout() -> UICollectionViewLayout {
         let layout = UICollectionViewCompositionalLayout {_,_ in

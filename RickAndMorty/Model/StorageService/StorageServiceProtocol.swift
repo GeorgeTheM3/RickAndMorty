@@ -8,6 +8,5 @@
 import Foundation
 
 protocol StorageServiceProtocol {
-    func saveCharacter(_ character: Character)
-    func getCharacters() -> [Character]
+    func selectCharecter(_ char: ResultCharacter)
 }
