@@ -19,6 +19,9 @@
 		5E4204A62A8DFF6B006C60E7 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4204A52A8DFF6B006C60E7 /* StorageService.swift */; };
 		5E4204A82A8DFF7A006C60E7 /* StorageServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4204A72A8DFF7A006C60E7 /* StorageServiceProtocol.swift */; };
 		5E4204AA2A8DFF8A006C60E7 /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4204A92A8DFF8A006C60E7 /* LocalStorage.swift */; };
+		5E4204AC2A8E00FA006C60E7 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4204AB2A8E00FA006C60E7 /* NetworkManager.swift */; };
+		5E4204AF2A8E0110006C60E7 /* NetwrokService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4204AE2A8E0110006C60E7 /* NetwrokService.swift */; };
+		5E4204B12A8E012B006C60E7 /* NetwrokServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4204B02A8E012B006C60E7 /* NetwrokServiceProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +39,9 @@
 		5E4204A52A8DFF6B006C60E7 /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 		5E4204A72A8DFF7A006C60E7 /* StorageServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageServiceProtocol.swift; sourceTree = "<group>"; };
 		5E4204A92A8DFF8A006C60E7 /* LocalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorage.swift; sourceTree = "<group>"; };
+		5E4204AB2A8E00FA006C60E7 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		5E4204AE2A8E0110006C60E7 /* NetwrokService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetwrokService.swift; sourceTree = "<group>"; };
+		5E4204B02A8E012B006C60E7 /* NetwrokServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetwrokServiceProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +89,7 @@
 		5E4204902A8DF663006C60E7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				5E4204A32A8DFF54006C60E7 /* LocalStorage */,
+				5E4204A32A8DFF54006C60E7 /* StorageService */,
 				5E42049E2A8DF802006C60E7 /* NetworkService */,
 			);
 			path = Model;
@@ -127,18 +133,21 @@
 			isa = PBXGroup;
 			children = (
 				5E42049F2A8DF80F006C60E7 /* JSONModel.swift */,
+				5E4204AB2A8E00FA006C60E7 /* NetworkManager.swift */,
+				5E4204B02A8E012B006C60E7 /* NetwrokServiceProtocol.swift */,
+				5E4204AE2A8E0110006C60E7 /* NetwrokService.swift */,
 			);
 			path = NetworkService;
 			sourceTree = "<group>";
 		};
-		5E4204A32A8DFF54006C60E7 /* LocalStorage */ = {
+		5E4204A32A8DFF54006C60E7 /* StorageService */ = {
 			isa = PBXGroup;
 			children = (
 				5E4204A52A8DFF6B006C60E7 /* StorageService.swift */,
 				5E4204A72A8DFF7A006C60E7 /* StorageServiceProtocol.swift */,
 				5E4204A92A8DFF8A006C60E7 /* LocalStorage.swift */,
 			);
-			path = LocalStorage;
+			path = StorageService;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,9 +221,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E4204AA2A8DFF8A006C60E7 /* LocalStorage.swift in Sources */,
+				5E4204B12A8E012B006C60E7 /* NetwrokServiceProtocol.swift in Sources */,
 				5E42047D2A8DF557006C60E7 /* AppDelegate.swift in Sources */,
+				5E4204AF2A8E0110006C60E7 /* NetwrokService.swift in Sources */,
 				5E42049A2A8DF6F3006C60E7 /* CharacterInfoView.swift in Sources */,
 				5E42049C2A8DF715006C60E7 /* CharacterInfoViewModel.swift in Sources */,
+				5E4204AC2A8E00FA006C60E7 /* NetworkManager.swift in Sources */,
 				5E4204972A8DF6BD006C60E7 /* MainViewModel.swift in Sources */,
 				5E4204A02A8DF80F006C60E7 /* JSONModel.swift in Sources */,
 				5E4204952A8DF6B1006C60E7 /* MainView.swift in Sources */,
