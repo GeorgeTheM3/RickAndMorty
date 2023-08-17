@@ -16,7 +16,7 @@ class MainView: UIViewController {
     private lazy var characterListCollectionView: UICollectionView = {
         let frame = self.view.frame
         let collectionView = UICollectionView(frame: frame, collectionViewLayout: setCompositionLayout())
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+        collectionView.register(PersonCell.self, forCellWithReuseIdentifier: PersonCell.reuseID)
         collectionView.dataSource = self
         return collectionView
     }()
@@ -24,6 +24,7 @@ class MainView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        setupNavigation()
         bindings()
     }
     
@@ -37,7 +38,12 @@ class MainView: UIViewController {
         super.init(coder: coder)
     }
     
+    private func setupNavigation() {
+        navigationItem.title = "Character"
+    }
+    
     private func setupView() {
+        characterListCollectionView.backgroundColor = .myBackground
         self.view.addSubview(characterListCollectionView)
     }
     
@@ -61,8 +67,12 @@ extension MainView: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
-        cell.backgroundColor = .red
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PersonCell.reuseID, for: indexPath) as? PersonCell else { return UICollectionViewCell()}
+        let info = viewModel.charactersList[indexPath.row]
+        cell.backgroundColor = .myBackgroundCell
+        cell.configureCell(with: info)
+        cell.layer.cornerRadius = 16
+        cell.clipsToBounds = true
         return cell
     }
 }
@@ -77,13 +87,14 @@ extension MainView {
     
     private func storiesSectionLayout() -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1/2),
-                                              heightDimension: .fractionalWidth(0.6))
+                                              heightDimension: .fractionalHeight(1))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        item.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
+        item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 8)
         
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
-                                               heightDimension: .fractionalWidth(0.6))
+                                               heightDimension: .fractionalWidth(0.55))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+        group.contentInsets = NSDirectionalEdgeInsets(top: 7, leading: 20, bottom: 7, trailing: 20)
         
         let section = NSCollectionLayoutSection(group: group)
         return section

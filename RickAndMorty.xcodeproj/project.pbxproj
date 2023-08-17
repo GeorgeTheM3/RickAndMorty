@@ -24,6 +24,8 @@
 		5E4204B12A8E012B006C60E7 /* NetworkServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4204B02A8E012B006C60E7 /* NetworkServiceProtocol.swift */; };
 		5E4204B32A8E1EFB006C60E7 /* ResultCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4204B22A8E1EFB006C60E7 /* ResultCharacter.swift */; };
 		5E4204B52A8E374F006C60E7 /* MainViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4204B42A8E374F006C60E7 /* MainViewModelProtocol.swift */; };
+		5E4204B92A8E4771006C60E7 /* PersonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4204B82A8E4771006C60E7 /* PersonCell.swift */; };
+		5E4204BB2A8E50ED006C60E7 /* Extension + UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4204BA2A8E50ED006C60E7 /* Extension + UIColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		5E4204B02A8E012B006C60E7 /* NetworkServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceProtocol.swift; sourceTree = "<group>"; };
 		5E4204B22A8E1EFB006C60E7 /* ResultCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCharacter.swift; sourceTree = "<group>"; };
 		5E4204B42A8E374F006C60E7 /* MainViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModelProtocol.swift; sourceTree = "<group>"; };
+		5E4204B82A8E4771006C60E7 /* PersonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCell.swift; sourceTree = "<group>"; };
+		5E4204BA2A8E50ED006C60E7 /* Extension + UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UIColor.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +107,7 @@
 		5E4204912A8DF669006C60E7 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				5E4204BA2A8E50ED006C60E7 /* Extension + UIColor.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -122,6 +127,7 @@
 				5E4204942A8DF6B1006C60E7 /* MainView.swift */,
 				5E4204962A8DF6BD006C60E7 /* MainViewModel.swift */,
 				5E4204B42A8E374F006C60E7 /* MainViewModelProtocol.swift */,
+				5E4204B62A8E475F006C60E7 /* Cell */,
 			);
 			path = MainScreen;
 			sourceTree = "<group>";
@@ -154,6 +160,14 @@
 				5E4204A92A8DFF8A006C60E7 /* LocalStorage.swift */,
 			);
 			path = StorageService;
+			sourceTree = "<group>";
+		};
+		5E4204B62A8E475F006C60E7 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				5E4204B82A8E4771006C60E7 /* PersonCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,6 +242,7 @@
 			files = (
 				5E4204AA2A8DFF8A006C60E7 /* LocalStorage.swift in Sources */,
 				5E4204B12A8E012B006C60E7 /* NetworkServiceProtocol.swift in Sources */,
+				5E4204B92A8E4771006C60E7 /* PersonCell.swift in Sources */,
 				5E42047D2A8DF557006C60E7 /* AppDelegate.swift in Sources */,
 				5E4204AF2A8E0110006C60E7 /* NetworkService.swift in Sources */,
 				5E4204B32A8E1EFB006C60E7 /* ResultCharacter.swift in Sources */,
@@ -237,6 +252,7 @@
 				5E4204AC2A8E00FA006C60E7 /* NetworkManager.swift in Sources */,
 				5E4204972A8DF6BD006C60E7 /* MainViewModel.swift in Sources */,
 				5E4204A02A8DF80F006C60E7 /* JSONModel.swift in Sources */,
+				5E4204BB2A8E50ED006C60E7 /* Extension + UIColor.swift in Sources */,
 				5E4204952A8DF6B1006C60E7 /* MainView.swift in Sources */,
 				5E4204A62A8DFF6B006C60E7 /* StorageService.swift in Sources */,
 				5E42047F2A8DF557006C60E7 /* SceneDelegate.swift in Sources */,
