@@ -22,13 +22,14 @@ class InfoCell: UITableViewCell {
     private lazy var speciesLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .left
-        label.text = "Species"
+        label.text = "Species:"
         return label
     }()
     
     private lazy var speciesValueLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .right
+        label.numberOfLines = 0
         label.font = .myBoldFont
         return label
     }()
@@ -36,13 +37,14 @@ class InfoCell: UITableViewCell {
     private lazy var typeLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .left
-        label.text = "Type"
+        label.text = "Type:"
         return label
     }()
     
     private lazy var typeValueLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .right
+        label.numberOfLines = 0
         label.font = .myBoldFont
         return label
     }()
@@ -50,7 +52,7 @@ class InfoCell: UITableViewCell {
     private lazy var genderLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .left
-        label.text = "Gender"
+        label.text = "Gender:"
         return label
     }()
     
@@ -97,7 +99,7 @@ class InfoCell: UITableViewCell {
             typeLabel.leadingAnchor.constraint(equalTo: speciesLabel.leadingAnchor),
             typeLabel.widthAnchor.constraint(equalToConstant: 70),
             
-            typeValueLabel.topAnchor.constraint(equalTo: typeLabel.topAnchor),
+            typeValueLabel.centerYAnchor.constraint(equalTo: typeLabel.centerYAnchor),
             typeValueLabel.trailingAnchor.constraint(equalTo: speciesValueLabel.trailingAnchor),
             typeValueLabel.leadingAnchor.constraint(equalTo: typeLabel.trailingAnchor),
             
