@@ -87,22 +87,27 @@ class InfoCell: UITableViewCell {
             
             speciesLabel.topAnchor.constraint(equalTo: background.topAnchor, constant: 16),
             speciesLabel.leadingAnchor.constraint(equalTo: background.leadingAnchor, constant: 16),
+            speciesLabel.widthAnchor.constraint(equalToConstant: 70),
             
             speciesValueLabel.topAnchor.constraint(equalTo: speciesLabel.topAnchor),
             speciesValueLabel.trailingAnchor.constraint(equalTo: background.trailingAnchor, constant: -16),
+            speciesValueLabel.leadingAnchor.constraint(equalTo: speciesLabel.trailingAnchor),
             
             typeLabel.centerYAnchor.constraint(equalTo: background.centerYAnchor),
             typeLabel.leadingAnchor.constraint(equalTo: speciesLabel.leadingAnchor),
+            typeLabel.widthAnchor.constraint(equalToConstant: 70),
             
             typeValueLabel.topAnchor.constraint(equalTo: typeLabel.topAnchor),
             typeValueLabel.trailingAnchor.constraint(equalTo: speciesValueLabel.trailingAnchor),
+            typeValueLabel.leadingAnchor.constraint(equalTo: typeLabel.trailingAnchor),
             
             genderLabel.bottomAnchor.constraint(equalTo: background.bottomAnchor, constant: -16),
             genderLabel.leadingAnchor.constraint(equalTo: speciesLabel.leadingAnchor),
+            genderLabel.widthAnchor.constraint(equalToConstant: 70),
             
             genderValueLabel.bottomAnchor.constraint(equalTo: genderLabel.bottomAnchor),
-            genderValueLabel.trailingAnchor.constraint(equalTo: speciesValueLabel.trailingAnchor)
-            
+            genderValueLabel.trailingAnchor.constraint(equalTo: speciesValueLabel.trailingAnchor),
+            genderValueLabel.leadingAnchor.constraint(equalTo: genderLabel.trailingAnchor),
         ])
     }
     
