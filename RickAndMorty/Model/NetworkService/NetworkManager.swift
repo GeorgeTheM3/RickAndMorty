@@ -73,7 +73,7 @@ final class NetworkManager {
             }, receiveValue: { data in
                 guard let image = UIImage(data: data) else { return }
                 let type = character.type == "" ? "None" : character.type
-                let person = ResultCharacter(id: character.id, image: image, imageURL: character.image, name: character.name, species: character.species, gender: character.gender, type: type, origin: character.origin, episode: character.episode)
+                let person = ResultCharacter(id: character.id, image: image, imageURL: character.image, status: character.status, name: character.name, species: character.species, gender: character.gender, type: type, origin: character.origin, episode: character.episode)
                 self.characters.append(person)
             })
             .store(in: &cancellable)

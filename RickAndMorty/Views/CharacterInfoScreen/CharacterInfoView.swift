@@ -16,6 +16,8 @@ class CharacterInfoView: UIViewController {
         tableView.register(InfoCell.self, forCellReuseIdentifier: InfoCell.reuseID)
         tableView.register(EpisodeCell.self, forCellReuseIdentifier: EpisodeCell.reuseID)
         tableView.register(OriginCell.self, forCellReuseIdentifier: OriginCell.reuseID)
+        tableView.register(CharacterInfoHeader.self, forHeaderFooterViewReuseIdentifier: CharacterInfoHeader.reuseId)
+        tableView.register(SimpleHeader.self, forHeaderFooterViewReuseIdentifier: SimpleHeader.reuseId)
         tableView.separatorStyle = .none
         tableView.dataSource = self
         tableView.delegate = self
@@ -54,10 +56,14 @@ extension CharacterInfoView: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
+        case 1:
+            return 1
+        case 2:
+            return 1
         case 3:
             return 10
         default:
-            return 1
+            return 0
         }
     }
     
@@ -105,6 +111,32 @@ extension CharacterInfoView: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        return nil
+        guard let standartHeader = tableView.dequeueReusableHeaderFooterView(withIdentifier: SimpleHeader.reuseId) as? SimpleHeader else { return nil}
+        switch section {
+        case 0:
+            guard let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: CharacterInfoHeader.reuseId) as? CharacterInfoHeader else { return nil}
+            header.configureHeader(with: viewModel.selectedCharacter)
+            return header
+        case 1:
+            standartHeader.configureHeader(with: "Info")
+            return standartHeader
+        case 2:
+            standartHeader.configureHeader(with: "Origin")
+            return standartHeader
+        case 3:
+            standartHeader.configureHeader(with: "Episode")
+            return standartHeader
+        default:
+            return standartHeader
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        switch section {
+        case 0:
+            return 250
+        default:
+            return 40
+        }
     }
 }

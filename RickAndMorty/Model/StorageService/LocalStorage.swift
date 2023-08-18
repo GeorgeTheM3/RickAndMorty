@@ -9,5 +9,5 @@ import Foundation
 
 class LocalStorage {
     var charectersStorage: [ResultCharacter] = []
-    var selectedCharacter = ResultCharacter(id: 0, imageURL: "", name: "", species: "", gender: "", type: "", origin: Origin(name: ""), episode: [])
+    var selectedCharacter = ResultCharacter(id: 0, imageURL: "", status: "", name: "", species: "", gender: "", type: "", origin: Origin(name: ""), episode: [])
 }

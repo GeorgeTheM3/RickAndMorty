@@ -11,6 +11,7 @@ struct ResultCharacter {
     let id: Int
     var image: UIImage?
     let imageURL: String
+    let status: String
     let name: String
     let species: String
     let gender: String

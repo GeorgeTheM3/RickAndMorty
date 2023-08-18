@@ -21,6 +21,7 @@ struct Result: Decodable {
     let id: Int
     let image: String
     let name: String
+    let status: String
     let species: String
     let gender: String
     let type: String

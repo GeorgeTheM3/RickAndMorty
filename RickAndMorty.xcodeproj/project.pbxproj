@@ -32,6 +32,8 @@
 		5EB6BA9E2A8F795800645F45 /* EpisodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB6BA9D2A8F795800645F45 /* EpisodeCell.swift */; };
 		5EB6BAA02A8F7CC400645F45 /* OriginCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB6BA9F2A8F7CC400645F45 /* OriginCell.swift */; };
 		5EB6BAA42A8F806D00645F45 /* Extension + UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB6BAA32A8F806D00645F45 /* Extension + UIImage.swift */; };
+		5EB6BAA72A8F831600645F45 /* CharacterInfoHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB6BAA62A8F831600645F45 /* CharacterInfoHeader.swift */; };
+		5EB6BAAA2A8F9DEB00645F45 /* SimpleHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB6BAA92A8F9DEB00645F45 /* SimpleHeader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +64,8 @@
 		5EB6BA9D2A8F795800645F45 /* EpisodeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeCell.swift; sourceTree = "<group>"; };
 		5EB6BA9F2A8F7CC400645F45 /* OriginCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OriginCell.swift; sourceTree = "<group>"; };
 		5EB6BAA32A8F806D00645F45 /* Extension + UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UIImage.swift"; sourceTree = "<group>"; };
+		5EB6BAA62A8F831600645F45 /* CharacterInfoHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterInfoHeader.swift; sourceTree = "<group>"; };
+		5EB6BAA92A8F9DEB00645F45 /* SimpleHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleHeader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +204,8 @@
 		5EB6BA962A8EA25500645F45 /* Headers */ = {
 			isa = PBXGroup;
 			children = (
+				5EB6BAA62A8F831600645F45 /* CharacterInfoHeader.swift */,
+				5EB6BAA92A8F9DEB00645F45 /* SimpleHeader.swift */,
 			);
 			path = Headers;
 			sourceTree = "<group>";
@@ -280,12 +286,14 @@
 				5E42047D2A8DF557006C60E7 /* AppDelegate.swift in Sources */,
 				5E4204AF2A8E0110006C60E7 /* NetworkService.swift in Sources */,
 				5EB6BA982A8EA26F00645F45 /* InfoCell.swift in Sources */,
+				5EB6BAA72A8F831600645F45 /* CharacterInfoHeader.swift in Sources */,
 				5E4204B32A8E1EFB006C60E7 /* ResultCharacter.swift in Sources */,
 				5E42049A2A8DF6F3006C60E7 /* CharacterInfoView.swift in Sources */,
 				5EB6BA9C2A8EA9B500645F45 /* Extension + UIFont.swift in Sources */,
 				5E4204B52A8E374F006C60E7 /* MainViewModelProtocol.swift in Sources */,
 				5EB6BA9A2A8EA32A00645F45 /* Extension + UIView.swift in Sources */,
 				5EB6BA9E2A8F795800645F45 /* EpisodeCell.swift in Sources */,
+				5EB6BAAA2A8F9DEB00645F45 /* SimpleHeader.swift in Sources */,
 				5E42049C2A8DF715006C60E7 /* CharacterInfoViewModel.swift in Sources */,
 				5E4204AC2A8E00FA006C60E7 /* NetworkManager.swift in Sources */,
 				5E4204972A8DF6BD006C60E7 /* MainViewModel.swift in Sources */,

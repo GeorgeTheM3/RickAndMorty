@@ -84,8 +84,8 @@ class OriginCell: UITableViewCell {
     }
     
     func configureCell(with: ResultCharacter) {
-        titleLabel.text = "Pilot"
-        planetLabel.text = "Episode 1, Season 2"
+        titleLabel.text = "Earth"
+        planetLabel.text = "Planet"
     }
     
     override func prepareForReuse() {
