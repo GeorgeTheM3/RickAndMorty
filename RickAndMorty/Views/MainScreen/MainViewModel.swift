@@ -20,7 +20,7 @@ class MainViewModel: MainViewModelProtocol {
             self.networkService.fetchCharacterData(page: 2)
         })
         DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: {
-            self.networkService.fetchCharacterData(page: 2)
+            self.networkService.fetchCharacterData(page: 3)
         })
         networkService.fetchCharacterData()
         bindings()

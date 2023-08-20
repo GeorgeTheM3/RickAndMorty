@@ -22,6 +22,7 @@ class OriginCell: UITableViewCell {
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .left
+        label.numberOfLines = 2
         label.font = .myBoldFont
         return label
     }()
@@ -73,18 +74,18 @@ class OriginCell: UITableViewCell {
             planetImageView.bottomAnchor.constraint(equalTo: background.bottomAnchor, constant: -8),
             planetImageView.widthAnchor.constraint(equalToConstant: self.frame.width * 0.2),
             
-            titleLabel.topAnchor.constraint(equalTo: background.topAnchor, constant: 16),
+            titleLabel.topAnchor.constraint(equalTo: background.topAnchor, constant: 14),
             titleLabel.leadingAnchor.constraint(equalTo: planetImageView.trailingAnchor, constant: 16),
             titleLabel.trailingAnchor.constraint(equalTo: background.trailingAnchor, constant: -16),
             
-            planetLabel.bottomAnchor.constraint(equalTo: background.bottomAnchor, constant: -16),
+            planetLabel.bottomAnchor.constraint(equalTo: background.bottomAnchor, constant: -14),
             planetLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
-            planetLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8)            
+
         ])
     }
     
     func configureCell(with: ResultCharacter) {
-        titleLabel.text = "Earth"
+        titleLabel.text = with.origin.name
         planetLabel.text = "Planet"
     }
     
