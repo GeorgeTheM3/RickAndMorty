@@ -53,6 +53,7 @@ class CharacterInfoView: UIViewController {
 
     private func setupNavigation() {
         navigationController?.navigationBar.tintColor = .white
+        navigationItem.largeTitleDisplayMode = .never
     }
     
     private func setupView() {

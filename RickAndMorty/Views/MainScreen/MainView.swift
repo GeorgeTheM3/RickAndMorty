@@ -44,6 +44,7 @@ class MainView: UIViewController {
         navigationItem.backButtonTitle = ""
         navigationController?.navigationBar.layoutMargins = UIEdgeInsets(top: 0, left: 24, bottom: 0, right: 0)
         navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.largeTitleDisplayMode = .automatic
     }
     
     private func setupView() {
