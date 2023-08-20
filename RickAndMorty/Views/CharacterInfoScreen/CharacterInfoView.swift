@@ -6,9 +6,12 @@
 //
 
 import UIKit
+import Combine
 
 class CharacterInfoView: UIViewController {
-    private let viewModel: CharacterInfoViewModel
+    private weak var viewModel: CharacterInfoViewModel!
+    
+    private var cancellable = Set<AnyCancellable>()
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: self.view.frame, style: .grouped)
@@ -28,6 +31,11 @@ class CharacterInfoView: UIViewController {
         super.viewDidLoad()
         setupView()
         setupNavigation()
+        bindings()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        cancellable.removeAll()
     }
     
     init(viewModel: CharacterInfoViewModel = CharacterInfoViewModel()) {
@@ -36,10 +44,13 @@ class CharacterInfoView: UIViewController {
     }
     
     required init?(coder: NSCoder) {
-        self.viewModel = CharacterInfoViewModel()
         super.init(coder: coder)
     }
     
+    deinit {
+        viewModel.clearEpisodes()
+    }
+
     private func setupNavigation() {
         navigationController?.navigationBar.tintColor = .white
     }
@@ -47,6 +58,15 @@ class CharacterInfoView: UIViewController {
     private func setupView() {
         tableView.backgroundColor = .myBackground
         self.view.addSubview(tableView)
+    }
+    
+    func bindings() {
+        viewModel.$episodes
+            .receive(on: RunLoop.main)
+            .sink { download in
+                self.tableView.reloadData()
+            }
+            .store(in: &cancellable)
     }
 }
 
@@ -62,7 +82,7 @@ extension CharacterInfoView: UITableViewDataSource {
         case 2:
             return 1
         case 3:
-            return 10
+            return viewModel.episodes.count
         default:
             return 0
         }
@@ -86,7 +106,7 @@ extension CharacterInfoView: UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: EpisodeCell.reuseID, for: indexPath) as? EpisodeCell else { return UITableViewCell()}
             cell.backgroundColor = .myBackground
             cell.selectionStyle = .none
-            cell.configureCell(with: viewModel.selectedCharacter)
+            cell.configureCell(with: viewModel.episodes[indexPath.row])
             return cell
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)

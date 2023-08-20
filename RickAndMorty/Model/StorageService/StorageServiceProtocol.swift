@@ -9,4 +9,6 @@ import Foundation
 
 protocol StorageServiceProtocol {
     func selectCharecter(_ char: ResultCharacter)
+    func save(character: ResultCharacter)
+    func save(episode: EpisodeData)
 }

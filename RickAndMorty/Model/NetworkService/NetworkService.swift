@@ -9,27 +9,49 @@ import Foundation
 import Combine
 
 class NetworkService: NetworkServiceProtocol {
-    @Published var characters: [ResultCharacter] = []
+    static let shared = NetworkService()
     
     private let networkManager =  NetworkManager()
     
     private var cancellable = Set<AnyCancellable>()
     
+    init() {
+        bindigs()
+    }
+    
     func fetchCharacterData(page: Int = 1) {
         networkManager.fetchCharacterData(page: page)
-        networkManager.$characters
-            .receive(on: RunLoop.main)
-            .map { element -> [ResultCharacter] in
-                return element
-            }
-            .sink { download in
-                self.characters = download
-            }
-            .store(in: &cancellable)
     }
     
     func fetchEpisodesData() {
         let selectedChar = StorageService.shared.getSelectedCharacter()
         networkManager.fetchEpisodes(for: selectedChar)
     }
+    
+    private func bindigs() {
+        networkManager.$downloadedCharacter
+            .receive(on: RunLoop.main)
+            .map { element -> ResultCharacter? in
+                return element
+            }
+            .sink { download in
+                if let char = download {
+                    StorageService.shared.save(character: char)
+                }
+            }
+            .store(in: &cancellable)
+        
+        networkManager.$episode
+            .receive(on: RunLoop.main)
+            .map { element -> EpisodeData? in
+                return element
+            }
+            .sink { download in
+                if let episode = download {
+                    StorageService.shared.save(episode: episode)
+                }
+            }
+            .store(in: &cancellable)
+    }
+    
 }

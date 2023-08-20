@@ -19,6 +19,9 @@ class MainViewModel: MainViewModelProtocol {
         DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
             self.networkService.fetchCharacterData(page: 2)
         })
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: {
+            self.networkService.fetchCharacterData(page: 2)
+        })
         networkService.fetchCharacterData()
         bindings()
     }
@@ -32,14 +35,10 @@ class MainViewModel: MainViewModelProtocol {
     }
     
     func bindings() {
-       networkService.$characters
-            .receive(on: RunLoop.main)
-            .map { element -> [ResultCharacter] in
-                return element
-            }
-            .sink { download in
-                self.charactersList = download
-            }
+        StorageService.shared.$updateStorage
+            .sink(receiveValue: { _ in
+                self.charactersList = StorageService.shared.getCharacterS()
+            })
             .store(in: &cancellable)
     }
 }

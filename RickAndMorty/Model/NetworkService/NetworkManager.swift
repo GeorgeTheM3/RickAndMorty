@@ -15,8 +15,8 @@ enum TypeURL {
 }
 
 final class NetworkManager {
-    @Published var characters: [ResultCharacter] = []
-    @Published var episodes: [EpisodeData] = []
+    @Published var downloadedCharacter: ResultCharacter?
+    @Published var episode: EpisodeData?
     
     var cancellable = Set<AnyCancellable>()
     
@@ -75,7 +75,8 @@ final class NetworkManager {
                 guard let image = UIImage(data: data) else { return }
                 let type = character.type == "" ? "None" : character.type
                 let person = ResultCharacter(id: character.id, image: image, imageURL: character.image, status: character.status, name: character.name, species: character.species, gender: character.gender, type: type, origin: character.origin, episode: character.episode)
-                self.characters.append(person)
+                self.downloadedCharacter = person
+                self.downloadedCharacter = nil
             })
             .store(in: &cancellable)
     }
@@ -103,7 +104,8 @@ final class NetworkManager {
                         break
                     }
                 }, receiveValue: { episode in
-                    self.episodes.append(episode)
+                    
+                    self.episode = episode
                 })
                 .store(in: &cancellable)
         })

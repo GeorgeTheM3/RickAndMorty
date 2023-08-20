@@ -8,6 +8,5 @@
 import Foundation
 
 protocol NetworkServiceProtocol {
-    var characters: [ResultCharacter] { get set }
     func fetchCharacterData(page: Int)
 }

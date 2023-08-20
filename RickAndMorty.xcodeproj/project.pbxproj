@@ -26,6 +26,7 @@
 		5E4204B52A8E374F006C60E7 /* MainViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4204B42A8E374F006C60E7 /* MainViewModelProtocol.swift */; };
 		5E4204B92A8E4771006C60E7 /* PersonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4204B82A8E4771006C60E7 /* PersonCell.swift */; };
 		5E4204BB2A8E50ED006C60E7 /* Extension + UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4204BA2A8E50ED006C60E7 /* Extension + UIColor.swift */; };
+		5EB221CA2A921BB4002E25D2 /* Extension + String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB221C92A921BB4002E25D2 /* Extension + String.swift */; };
 		5EB6BA982A8EA26F00645F45 /* InfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB6BA972A8EA26F00645F45 /* InfoCell.swift */; };
 		5EB6BA9A2A8EA32A00645F45 /* Extension + UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB6BA992A8EA32A00645F45 /* Extension + UIView.swift */; };
 		5EB6BA9C2A8EA9B500645F45 /* Extension + UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB6BA9B2A8EA9B500645F45 /* Extension + UIFont.swift */; };
@@ -58,6 +59,7 @@
 		5E4204B42A8E374F006C60E7 /* MainViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModelProtocol.swift; sourceTree = "<group>"; };
 		5E4204B82A8E4771006C60E7 /* PersonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCell.swift; sourceTree = "<group>"; };
 		5E4204BA2A8E50ED006C60E7 /* Extension + UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UIColor.swift"; sourceTree = "<group>"; };
+		5EB221C92A921BB4002E25D2 /* Extension + String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + String.swift"; sourceTree = "<group>"; };
 		5EB6BA972A8EA26F00645F45 /* InfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCell.swift; sourceTree = "<group>"; };
 		5EB6BA992A8EA32A00645F45 /* Extension + UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UIView.swift"; sourceTree = "<group>"; };
 		5EB6BA9B2A8EA9B500645F45 /* Extension + UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UIFont.swift"; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				5E4204BA2A8E50ED006C60E7 /* Extension + UIColor.swift */,
+				5EB221C92A921BB4002E25D2 /* Extension + String.swift */,
 				5EB6BA992A8EA32A00645F45 /* Extension + UIView.swift */,
 				5EB6BA9B2A8EA9B500645F45 /* Extension + UIFont.swift */,
 				5EB6BAA32A8F806D00645F45 /* Extension + UIImage.swift */,
@@ -302,6 +305,7 @@
 				5E4204BB2A8E50ED006C60E7 /* Extension + UIColor.swift in Sources */,
 				5E4204952A8DF6B1006C60E7 /* MainView.swift in Sources */,
 				5EB6BAA42A8F806D00645F45 /* Extension + UIImage.swift in Sources */,
+				5EB221CA2A921BB4002E25D2 /* Extension + String.swift in Sources */,
 				5E4204A62A8DFF6B006C60E7 /* StorageService.swift in Sources */,
 				5E42047F2A8DF557006C60E7 /* SceneDelegate.swift in Sources */,
 				5E4204A82A8DFF7A006C60E7 /* StorageServiceProtocol.swift in Sources */,

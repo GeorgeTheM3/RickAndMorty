@@ -23,6 +23,7 @@ class EpisodeCell: UITableViewCell {
         let label = UILabel()
         label.textAlignment = .left
         label.font = .myBoldFont
+        label.numberOfLines = 2
         return label
     }()
     
@@ -80,10 +81,10 @@ class EpisodeCell: UITableViewCell {
         ])
     }
     
-    func configureCell(with: ResultCharacter) {
-        titleLabel.text = "Pilot"
-        seasonLabel.text = "Episode 1, Season 2"
-        dateLabel.text = "December 9, 2013"
+    func configureCell(with: EpisodeData) {
+        titleLabel.text = with.name
+        seasonLabel.text = String.formatSeason(with.episode)
+        dateLabel.text = with.airDate
     }
     
     override func prepareForReuse() {
