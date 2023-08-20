@@ -27,6 +27,10 @@ class MainViewModel: MainViewModelProtocol {
         StorageService.shared.selectCharecter(char)
     }
     
+    func downloadEpisodesData() {
+        networkService.fetchEpisodesData()
+    }
+    
     func bindings() {
        networkService.$characters
             .receive(on: RunLoop.main)

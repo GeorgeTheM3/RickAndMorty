@@ -16,6 +16,7 @@ enum TypeURL {
 
 final class NetworkManager {
     @Published var characters: [ResultCharacter] = []
+    @Published var episodes: [EpisodeData] = []
     
     var cancellable = Set<AnyCancellable>()
     
@@ -77,5 +78,34 @@ final class NetworkManager {
                 self.characters.append(person)
             })
             .store(in: &cancellable)
+    }
+    
+    func fetchEpisodes(for character: ResultCharacter) {
+        character.episode.forEach({ url in
+            guard let url = URL(string: url) else { return }
+            URLSession.shared.dataTaskPublisher(for: url)
+                .tryMap { element -> Data in
+                    guard let response = element.response as? HTTPURLResponse,
+                          (200...299).contains(response.statusCode) else {
+                        throw URLError(.badServerResponse)
+                    }
+                    return element.data
+                }
+                .decode(type: EpisodeData.self, decoder: JSONDecoder())
+                .eraseToAnyPublisher()
+                .sink(receiveCompletion: { status in
+                    switch status {
+                    case .finished:
+                        print("Completed download episode")
+                        break
+                    case .failure(let error):
+                        print("Receiver error \(error)")
+                        break
+                    }
+                }, receiveValue: { episode in
+                    self.episodes.append(episode)
+                })
+                .store(in: &cancellable)
+        })
     }
 }

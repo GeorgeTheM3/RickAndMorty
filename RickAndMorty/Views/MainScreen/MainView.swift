@@ -41,6 +41,7 @@ class MainView: UIViewController {
     
     private func setupNavigation() {
         navigationItem.title = "Character"
+        navigationItem.backButtonTitle = ""
     }
     
     private func setupView() {
@@ -81,6 +82,7 @@ extension MainView: UICollectionViewDataSource {
 extension MainView: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         viewModel.selectCharacter(viewModel.charactersList[indexPath.row])
+        viewModel.downloadEpisodesData()
         let controller = CharacterInfoView()
         navigationController?.pushViewController(controller, animated: true)
     }

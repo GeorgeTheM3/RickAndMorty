@@ -27,4 +27,9 @@ class NetworkService: NetworkServiceProtocol {
             }
             .store(in: &cancellable)
     }
+    
+    func fetchEpisodesData() {
+        let selectedChar = StorageService.shared.getSelectedCharacter()
+        networkManager.fetchEpisodes(for: selectedChar)
+    }
 }

@@ -41,6 +41,7 @@ class CharacterInfoView: UIViewController {
     }
     
     private func setupNavigation() {
+        navigationController?.navigationBar.tintColor = .white
     }
     
     private func setupView() {
