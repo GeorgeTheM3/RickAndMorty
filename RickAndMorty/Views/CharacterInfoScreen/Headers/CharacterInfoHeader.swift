@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CharacterInfoHeader: UITableViewHeaderFooterView {
+final class CharacterInfoHeader: UITableViewHeaderFooterView {
     static let reuseId: String = "CharacterInfoHeader"
     
     private lazy var photoImageView: UIImageView = {

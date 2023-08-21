@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-class MainViewModel: MainViewModelProtocol {
+final class MainViewModel: MainViewModelProtocol {
     @Published var charactersList: [ResultCharacter] = []
     
     private var downloadedPage: Int = 1

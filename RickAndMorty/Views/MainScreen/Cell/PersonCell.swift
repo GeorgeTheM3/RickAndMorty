@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PersonCell: UICollectionViewCell {
+final class PersonCell: UICollectionViewCell {
     static let reuseID = "PersonCell"
     
     private lazy var photoImageView: UIImageView = {

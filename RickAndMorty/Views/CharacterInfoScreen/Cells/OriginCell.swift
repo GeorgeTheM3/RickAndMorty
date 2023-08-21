@@ -7,7 +7,7 @@
 
 import UIKit
 
-class OriginCell: UITableViewCell {
+final class OriginCell: UITableViewCell {
     static let reuseID = "OriginCell"
     
     private lazy var background: UIView = {

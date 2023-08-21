@@ -7,7 +7,7 @@
 
 import Foundation
 
-class StorageService: StorageServiceProtocol {
+final class StorageService: StorageServiceProtocol {
     @Published var updateStorage: Bool = false
     @Published var updateEpisodes: Bool = false
     

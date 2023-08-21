@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SimpleHeader: UITableViewHeaderFooterView {
+final class SimpleHeader: UITableViewHeaderFooterView {
     static let reuseId: String = "SimpleHeader"
     
     private lazy var titleLabel: UILabel = {

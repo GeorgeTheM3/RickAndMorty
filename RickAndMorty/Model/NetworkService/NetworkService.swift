@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-class NetworkService: NetworkServiceProtocol {
+final class NetworkService: NetworkServiceProtocol {
     static let shared = NetworkService()
     
     private let networkManager =  NetworkManager()

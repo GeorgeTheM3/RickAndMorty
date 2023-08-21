@@ -8,7 +8,7 @@
 import UIKit
 import Combine
 
-class MainView: UIViewController {
+final class MainView: UIViewController {
     private var cancellable = Set<AnyCancellable>()
     
     private let viewModel: MainViewModel
