@@ -11,18 +11,14 @@ import Combine
 class MainViewModel: MainViewModelProtocol {
     @Published var charactersList: [ResultCharacter] = []
     
+    private var downloadedPage: Int = 1
+    
     private var cancellable = Set<AnyCancellable>()
     
     private let networkService = NetworkService()
 
     init() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
-            self.networkService.fetchCharacterData(page: 2)
-        })
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: {
-            self.networkService.fetchCharacterData(page: 3)
-        })
-        networkService.fetchCharacterData()
+        self.networkService.fetchCharacterData()
         bindings()
     }
     
@@ -34,7 +30,12 @@ class MainViewModel: MainViewModelProtocol {
         networkService.fetchEpisodesData()
     }
     
-    func bindings() {
+    func downloadNextPage() {
+        downloadedPage += 1
+        networkService.fetchCharacterData(page: downloadedPage)
+    }
+    
+    private func bindings() {
         StorageService.shared.$updateStorage
             .sink(receiveValue: { _ in
                 self.charactersList = StorageService.shared.getCharacterS()

@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-class CharacterInfoViewModel {
+final class CharacterInfoViewModel {
     @Published var episodes: [EpisodeData] = []
     
     private var cancellable = Set<AnyCancellable>()
@@ -20,7 +20,7 @@ class CharacterInfoViewModel {
         bindings()
     }
     
-    func bindings() {
+    private func bindings() {
         StorageService.shared.$updateEpisodes
             .sink(receiveValue: { _ in
                 self.episodes = StorageService.shared.getEpisodes()

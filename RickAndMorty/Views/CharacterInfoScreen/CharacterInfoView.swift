@@ -8,10 +8,20 @@
 import UIKit
 import Combine
 
-class CharacterInfoView: UIViewController {
+final class CharacterInfoView: UIViewController {
     private weak var viewModel: CharacterInfoViewModel!
     
     private var cancellable = Set<AnyCancellable>()
+    
+    private lazy var activitiIndicator: UIActivityIndicatorView = {
+        let indicator = UIActivityIndicatorView(style: .large)
+        indicator.color = .systemGreen
+        indicator.startAnimating()
+        indicator.hidesWhenStopped = true
+        indicator.frame = CGRect(x: view.frame.midX - 25, y: view.frame.midY - 25, width: 50, height: 50)
+        return indicator
+    }()
+    
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: self.view.frame, style: .grouped)
@@ -21,6 +31,7 @@ class CharacterInfoView: UIViewController {
         tableView.register(OriginCell.self, forCellReuseIdentifier: OriginCell.reuseID)
         tableView.register(CharacterInfoHeader.self, forHeaderFooterViewReuseIdentifier: CharacterInfoHeader.reuseId)
         tableView.register(SimpleHeader.self, forHeaderFooterViewReuseIdentifier: SimpleHeader.reuseId)
+        tableView.isHidden = true
         tableView.separatorStyle = .none
         tableView.dataSource = self
         tableView.delegate = self
@@ -59,12 +70,21 @@ class CharacterInfoView: UIViewController {
     private func setupView() {
         tableView.backgroundColor = .myBackground
         self.view.addSubview(tableView)
+        self.view.addSubview(activitiIndicator)
+    }
+    
+    private func checkDownload() {
+        if !viewModel.episodes.isEmpty {
+            activitiIndicator.stopAnimating()
+            tableView.isHidden = false
+        }
     }
     
     func bindings() {
         viewModel.$episodes
             .receive(on: RunLoop.main)
             .sink { download in
+                self.checkDownload()
                 self.tableView.reloadData()
             }
             .store(in: &cancellable)
